@@ -196,16 +196,17 @@ int getPlayerInput(string playerName) {
 //Returns true if the indicated location on the board yet not yet been played, false otherwise
 
 bool isLegalMove(char board[], int location) {
-    //board[location];
-
-    if (location == 'x' || location == 'o') {
+    
+    if (location > 9 || location <= 0) { // checks if number between 1 and 9
         return false;
     }
-    if (getPlayerInput(name1) > 9 || getPlayerInput(name2) > 9 || getPlayerInput(name1) <= 0 || getPlayerInput(name2) <= 0) {
-        return false;
+    char locationChar2 = '0' + location; //makes the location a char so it can check each char for an x or o
+    for (int i = 0; i < SIZE; i++) {
+        if (board[i] == locationChar2)
+            return true;
     }
-    else return true;
-
+  
+    return false;
 }
 
 //Places the indicated mark at the specified board location; routine assumes that this is legal placement
