@@ -296,6 +296,7 @@ void displayBoard(char board[]) {
     return;
 }
 
+
 //Prints out the "stats" for all the games: number of games tied, number of games player 1 won, and number ofgames player 2 won.  May include players' 
 // names
 void displayGameStats(int ties, int player1Score, int player2Score) {
